@@ -1,28 +1,23 @@
-//index.js -> This file is a JavaScript Entry Point.
-
-//import React and ReactDOM from create-react-app node module
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-//create our first functional Component
+//Nested Components in React
 const Greeting = () => {
-  return <h1>Hello from the first React Component.</h1>;
+  return (
+    <div>
+      <Name />
+      <Message />
+    </div>
+  );
 };
 
-//What is happening under the hood when we create a function component.
+//First Nest Componet
+const Name = () => <h1>Shubham Jaiswal</h1>;
 
-// const Greeting = () => {
-//   return React.createElement('h1', {}, 'Vicky Jaiswal');
-// };
+//Second Nest Component
+const Message = () => {
+  return <p>Hello, how are you?</p>;
+};
 
-// const Greeting = () => {
-//   return React.createElement(
-//     'div',
-//     {},
-//     React.createElement('h1', {}, 'Shubham Jaiswal')
-//   );
-// };
-
-//create root using root API
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting />);
