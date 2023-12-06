@@ -1,5 +1,8 @@
 # React Fundamentals
 
+Note: This documentation was not written by me; I have used content from the John Smilga course I took on Udemy.
+You can purchase his course on Udemy, titled [React 18 Tutorial and Projects Course (2023)].
+
 #### Folder Structure
 
 - node_modules
