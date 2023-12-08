@@ -35,11 +35,15 @@ const books = [
 const BookList = () => {
   const userName = 'Shubham Jaiswal';
 
+  const displayName = () => {
+    console.log(userName);
+  };
+
   return (
     <section className="booklist">
       {/* <EventExample /> */}
       {books.map((book, index) => {
-        return <Book {...book} key={index} userName={userName} />;
+        return <Book {...book} key={index} displayName={displayName} />;
       })}
     </section>
   );
@@ -77,12 +81,14 @@ const BookList = () => {
 // };
 
 //create a  Book
-const Book = ({ img, title, author, userName }) => {
+const Book = (props) => {
+  console.log(props);
+  const { img, title, author, displayName } = props;
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h3>{title}</h3>
-      <button onClick={() => console.log(userName)}>Show Title</button>
+      <button onClick={displayName}>Show Title</button>
       <h4>{author}</h4>
     </article>
   );
