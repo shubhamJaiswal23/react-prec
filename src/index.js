@@ -33,63 +33,56 @@ const books = [
 
 //create a BookList
 const BookList = () => {
+  const userName = 'Shubham Jaiswal';
+
   return (
     <section className="booklist">
-      <EventExample />
+      {/* <EventExample /> */}
       {books.map((book, index) => {
-        return <Book {...book} key={index} />;
+        return <Book {...book} key={index} userName={userName} />;
       })}
     </section>
   );
 };
 
 //Events Example in React
-const EventExample = () => {
-  const handleInputChange = (e) => {
-    console.log(e.target);
-    console.log(e.target.name);
-    console.log(e.target.value);
-    console.log('Handle Input Change');
-  };
-
-  const handleButtonClick = () => {
-    alert('Handle Button Click');
-  };
-
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Submitted');
-  };
-
-  return (
-    <section>
-      <h1>Typical Form</h1>
-      <form>
-        <input
-          type="text"
-          style={{ margin: '1rem 0' }}
-          onChange={handleInputChange}
-          name="user_input"
-        />
-        <button type="submit" onClick={handleOnSubmit}>
-          Submit
-        </button>
-        <div>
-          <button type="button" onClick={handleButtonClick}>
-            Click Me
-          </button>
-        </div>
-      </form>
-    </section>
-  );
-};
+// const EventExample = () => {
+//   return (
+//     <section>
+//       <h1>Typical Form</h1>
+//       <form>
+//         <input
+//           type="text"
+//           style={{ margin: '1rem 0' }}
+//           onChange={(e) => console.log(e.target.value)}
+//           name="user_input"
+//         />
+//         <button
+//           type="submit"
+//           onClick={(e) => {
+//             e.preventDefault();
+//             console.log('Form Submitted');
+//           }}
+//         >
+//           Submit
+//         </button>
+//         <div>
+//           <button type="button" onClick={() => alert('I got clicked')}>
+//             Click Me
+//           </button>
+//         </div>
+//       </form>
+//     </section>
+//   );
+// };
 
 //create a  Book
-const Book = ({ img, title, author }) => {
+const Book = ({ img, title, author, userName }) => {
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h3>{title}</h3>
+      <button onClick={() => console.log(userName)}>Show Title</button>
       <h4>{author}</h4>
     </article>
   );
