@@ -35,9 +35,51 @@ const books = [
 const BookList = () => {
   return (
     <section className="booklist">
+      <EventExample />
       {books.map((book, index) => {
         return <Book {...book} key={index} />;
       })}
+    </section>
+  );
+};
+
+//Events Example in React
+const EventExample = () => {
+  const handleInputChange = (e) => {
+    console.log(e.target);
+    console.log(e.target.name);
+    console.log(e.target.value);
+    console.log('Handle Input Change');
+  };
+
+  const handleButtonClick = () => {
+    alert('Handle Button Click');
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form Submitted');
+  };
+
+  return (
+    <section>
+      <h1>Typical Form</h1>
+      <form>
+        <input
+          type="text"
+          style={{ margin: '1rem 0' }}
+          onChange={handleInputChange}
+          name="user_input"
+        />
+        <button type="submit" onClick={handleOnSubmit}>
+          Submit
+        </button>
+        <div>
+          <button type="button" onClick={handleButtonClick}>
+            Click Me
+          </button>
+        </div>
+      </form>
     </section>
   );
 };
