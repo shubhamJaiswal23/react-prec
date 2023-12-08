@@ -10,6 +10,11 @@ body {
   color: #222;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .booklist {
   width: 90vw;
   max-width: 1000px;
@@ -31,6 +36,7 @@ body {
   padding: 2rem;
   text-align: center;
   cursor: pointer;
+  position: relative;
 }
 
 .book img {
@@ -45,4 +51,15 @@ body {
 .book h4 {
   font-size: 0.75rem;
   color: #617d98;
+}
+
+.book span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #c35600;
+  color: #fff;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
